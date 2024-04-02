@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = UIColor.systemYellow
         let screenWidth = UIScreen.main.bounds.width
         
         //Label kısmı
