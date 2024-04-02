@@ -30,35 +30,49 @@ class ViewController: UIViewController {
         myLabel.frame = CGRect(x: (screenWidth - 350 ) * 0.5, y: 180, width: 350, height: 40)
         myLabel.textAlignment = .center
         myLabel.font = UIFont.boldSystemFont(ofSize: 20)
-        myLabel.text = "Press Start button to execute"
+        myLabel.text = "Press Play button to start"
         view.addSubview(myLabel)
         
         //button1
         myButton1.frame = CGRect(x: (screenWidth - 90 ) / 2, y: 280, width: 90, height: 30)
-        myButton1.setTitle("Start", for: UIControl.State.normal)
-        myButton1.setTitleColor(.blue, for: UIControl.State.normal)
+//        myButton1.setTitle("Start", for: UIControl.State.normal)
+//        myButton1.setTitleColor(.blue, for: UIControl.State.normal)
+        if let image = UIImage(systemName: "play.fill") {
+                   myButton1.setImage(image, for: .normal) // Resmi düğmeye atama
+               } else {
+                   print("Image not found!") // Resim bulunamazsa hata mesajı bas
+               }
         view.addSubview(myButton1)
         
         myButton1.addTarget(self, action: #selector(start), for: .touchUpInside)
         
         //buton2
         myButton2.frame = CGRect(x: (screenWidth - 90 ) / 2, y: 340, width: 90, height: 30)
-        myButton2.setTitle("Pause", for: UIControl.State.normal)
-        myButton2.setTitleColor(.blue, for: UIControl.State.normal)
+//        myButton2.setTitle("Pause", for: UIControl.State.normal)
+//        myButton2.setTitleColor(.blue, for: UIControl.State.normal)
+        if let image2 = UIImage(systemName: "pause.rectangle") {
+            myButton2.setImage(image2, for: .normal)
+        }
         view.addSubview(myButton2)
         myButton2.addTarget(self, action: #selector(pause), for: .touchUpInside)
         
         //buton3
         myButton3.frame = CGRect(x: (screenWidth - 90 ) / 2, y: 400, width: 90, height: 30)
-        myButton3.setTitle("Restart", for: UIControl.State.normal)
-        myButton3.setTitleColor(.blue, for: UIControl.State.normal)
+//        myButton3.setTitle("Restart", for: UIControl.State.normal)
+//        myButton3.setTitleColor(.blue, for: UIControl.State.normal)
+        if let image3 = UIImage(systemName: "restart.circle.fill") {
+            myButton3.setImage(image3, for: UIControl.State.normal)
+        }
         view.addSubview(myButton3)
         myButton3.addTarget(self, action: #selector(restart), for: .touchUpInside)
         
         //button4
         myButton4.frame = CGRect(x: (screenWidth - 90 ) / 2, y: 460, width: 90, height: 30)
-        myButton4.setTitle("Resume", for: UIControl.State.normal)
-        myButton4.setTitleColor(.blue, for: UIControl.State.normal)
+//        myButton4.setTitle("Resume", for: UIControl.State.normal)
+//        myButton4.setTitleColor(.blue, for: UIControl.State.normal)
+        if let image4 = UIImage(systemName: "forward.frame.fill") {
+            myButton4.setImage(image4, for: .normal)
+        }
         view.addSubview(myButton4)
         myButton4.addTarget(self, action: #selector(resume), for: .touchUpInside)
         
